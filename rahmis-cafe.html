@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rahmi's Café & Lounge – Oberkirch</title>
+  <meta name="description" content="Rahmi's Café & Lounge in Oberkirch – Kaffee, Frühstück und Hausgemachtes in einem historischen Fachwerkhaus. Di–So 09–18 Uhr. Hauptstraße 55, 77704 Oberkirch."/>
+  <meta property="og:title" content="Rahmi's Café & Lounge – Oberkirch"/>
+  <meta property="og:description" content="Kaffee & Genuss in einem historischen Fachwerkhaus im Herzen von Oberkirch."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#111010"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111010'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='68' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Rahmi's Café & Lounge",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hauptstraße 55",
+      "addressLocality": "Oberkirch",
+      "postalCode": "77704",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "servesCuisine": "Café, Lounge",
+    "priceRange": "€€",
+    "sameAs": "https://www.instagram.com/rahmiscafe"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- Tema activo: clásico. Para el tema cálido usa css/theme-warm.css -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Hauptnavigation">
+  <a href="#" class="nav-brand">
+    <span class="nav-logo">Rahmi's</span>
+    <span class="nav-sub">Café & Lounge · Oberkirch</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Das Lokal</a></li>
+    <li><a href="#karte">Karte</a></li>
+    <li><a href="#atmosphare">Atmosphäre</a></li>
+    <li><a href="#bewertungen">Bewertungen</a></li>
+    <li><a href="#reservierung" class="nav-reserve">Reservieren</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<nav class="nav-mobile" id="mobileNav" aria-label="Mobiles Menü">
+  <a href="#about">Das Lokal</a>
+  <a href="#karte">Karte</a>
+  <a href="#atmosphare">Atmosphäre</a>
+  <a href="#bewertungen">Bewertungen</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#reservierung" class="nav-reserve-mobile">Reservieren</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-rs">RS</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Oberkirch · Schwarzwald · Hauptstraße 55</p>
+    <h1 class="hero-name">Rahmi's</h1>
+    <p class="hero-type">Café & Lounge</p>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">Ein originales Fachwerkhaus.<br>Guter Kaffee. Echte Momente.</p>
+    <div class="hero-cta">
+      <a href="#reservierung" class="btn btn-dark">Tisch reservieren</a>
+      <a href="#karte" class="btn btn-outline">Karte ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-text">Täglich von 09 bis 18 Uhr für Sie da</p>
+    <div class="strip-hours">
+      <div class="strip-slot">
+        <span class="strip-slot-label">Morgens</span>
+        <div class="strip-slot-name">Kaffee & Frühstück</div>
+        <div class="strip-slot-hours">09:00 – 12:00</div>
+      </div>
+      <div class="strip-slot">
+        <span class="strip-slot-label">Mittags</span>
+        <div class="strip-slot-name">Pause & Genuss</div>
+        <div class="strip-slot-hours">12:00 – 15:00</div>
+      </div>
+      <div class="strip-slot">
+        <span class="strip-slot-label">Nachmittags</span>
+        <div class="strip-slot-name">Kuchen & Lounge</div>
+        <div class="strip-slot-hours">15:00 – 18:00</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="section-inner">
+    <span class="section-label reveal">Das Lokal</span>
+    <h2 class="section-title reveal">Ein Haus mit<br><em>Geschichte & Charakter</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Mitten in der historischen Altstadt von Oberkirch, hinter einer der schönsten Fachwerkfassaden der Hauptstraße, liegt <strong>Rahmi's Café & Lounge</strong> — ein Ort zum Ankommen, Durchatmen und wirklich Genießen.</p>
+        <p>Morgens duftet es nach frisch gemahlenem Kaffee und warmem Gebäck. Mittags eine echte Auszeit vom Alltag. Nachmittags verwöhnt hausgemachter Kuchen die Seele.</p>
+        <p><strong>Rahman</strong> hat diesen Ort mit Persönlichkeit gefüllt — und das spürt man vom ersten Schritt an.</p>
+        <a href="#reservierung" class="btn btn-outline" style="margin-top:2rem; display:inline-block;">Tisch reservieren</a>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-rs">RS</div>
+        <div class="about-script">Rahmi's</div>
+        <div class="about-badge">Fachwerkhaus · Oberkirch</div>
+        <div class="photo-hint">📸 Foto des Lokals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND – solo interno, no visible al cliente -->
+<section style="display:none">
+  <div class="section-inner">
+    <span class="section-label reveal">Brand Identity</span>
+    <h2 class="section-title reveal">Das visuelle<br><em>System</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="brand-grid">
+      <div class="brand-card reveal">
+        <span class="brand-card-label">Wortmarke</span>
+        <div class="logo-preview-script">Rahmi's</div>
+        <div class="logo-preview-rule"></div>
+        <div class="logo-preview-sub">Café & Lounge</div>
+        <p style="margin-top:1.5rem; font-size:.7rem; color:var(--gray); line-height:1.8;">Script-Schrift für den Namen — persönlich und elegant. Monogramm RS als Hintergrundelement. Klare Hierarchie durch Kapitalschrift.</p>
+      </div>
+      <div class="brand-card reveal">
+        <span class="brand-card-label">Farbpalette</span>
+        <div class="palette">
+          <div><div class="swatch" style="background:#111010;"></div><div class="swatch-name">Schwarz</div></div>
+          <div><div class="swatch" style="background:#6b6666;"></div><div class="swatch-name">Grau</div></div>
+          <div><div class="swatch" style="background:#f5f2ee; border:1px solid rgba(0,0,0,.1);"></div><div class="swatch-name">Cream</div></div>
+          <div><div class="swatch" style="background:#d8d3ce; border:1px solid rgba(0,0,0,.08);"></div><div class="swatch-name">Sand</div></div>
+          <div><div class="swatch" style="background:#ffffff; border:1px solid rgba(0,0,0,.1);"></div><div class="swatch-name">Weiß</div></div>
+        </div>
+        <p style="margin-top:1.5rem; font-size:.7rem; color:var(--gray); line-height:1.8;">Monochrom & zeitlos. Schwarz und Weiß als Basis — warme Cremetöne für Tiefe und Wärme.</p>
+      </div>
+      <div class="brand-card reveal">
+        <span class="brand-card-label">Typografie</span>
+        <div class="font-display">Genuss &<br>Stimmung</div>
+        <div style="height:1px; background:rgba(0,0,0,.1); margin:.8rem 0;"></div>
+        <div class="font-body">Great Vibes — Markenschrift<br>Cormorant Garamond — Headings<br>Montserrat Light — Fließtext<br><br>Drei Ebenen. Eine klare Stimme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATMOSPHÄRE -->
+<section id="atmosphare" class="atmo-bg">
+  <div class="section-inner">
+    <span class="section-label reveal" style="color:rgba(255,255,255,.4);">Atmosphäre</span>
+    <h2 class="section-title reveal" style="color:var(--white);">Vom Morgen<br><em>bis zum Nachmittag</em></h2>
+    <div class="section-rule reveal" style="background:rgba(255,255,255,.2);"></div>
+    <div class="atmo-grid">
+      <div class="atmo-card reveal">
+        <div class="atmo-photo-placeholder">📸 Foto Morgens</div>
+        <span class="atmo-icon">☕</span>
+        <span class="atmo-when">09:00 – 12:00</span>
+        <h3 class="atmo-name">Der Morgen</h3>
+        <p class="atmo-desc">Frisch gebrühter Kaffee, hausgemachtes Gebäck und die Ruhe des Vormittags. Der perfekte Start in den Tag — in einem der schönsten Fachwerkhäuser Oberkirchs.</p>
+      </div>
+      <div class="atmo-card reveal">
+        <div class="atmo-photo-placeholder">📸 Foto Mittags</div>
+        <span class="atmo-icon">🍽️</span>
+        <span class="atmo-when">12:00 – 15:00</span>
+        <h3 class="atmo-name">Die Mittagspause</h3>
+        <p class="atmo-desc">Leichte Gerichte, gute Gespräche, kein Stress. Für alle, die sich eine echte Auszeit verdient haben — mitten im Herzen von Oberkirch.</p>
+      </div>
+      <div class="atmo-card reveal">
+        <div class="atmo-photo-placeholder">📸 Foto Nachmittags</div>
+        <span class="atmo-icon">🍰</span>
+        <span class="atmo-when">15:00 – 18:00</span>
+        <h3 class="atmo-name">Der Nachmittag</h3>
+        <p class="atmo-desc">Hausgemachter Kuchen, Tee oder ein Glas Wein aus der Ortenau. Die Lounge-Stimmung lädt zum Verweilen ein — Zeit vergeht hier langsamer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KARTE -->
+<section id="karte" class="menu-bg">
+  <div class="section-inner">
+    <span class="section-label reveal">Speisekarte</span>
+    <h2 class="section-title reveal">Was wir<br><em>anbieten</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="menu-grid">
+      <div class="reveal">
+        <h3 class="menu-cat">Frühstück & Kaffee</h3>
+        <div class="menu-item"><div><div class="item-name">Rahmi's Frühstück</div><div class="item-desc">Aufschnitt, Käse, Ei, hausgemachte Marmelade</div></div><div class="item-price">12,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Avocado Toast</div><div class="item-desc">Sauerteig, Avocado, Feta, Chiliflocken</div></div><div class="item-price">9,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Espresso / Cappuccino</div><div class="item-desc">Frisch gemahlen, täglich geröstet</div></div><div class="item-price">2,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Hausgemachter Kuchen</div><div class="item-desc">Täglich wechselnd</div></div><div class="item-price">4,20 €</div></div>
+      </div>
+      <div class="reveal">
+        <h3 class="menu-cat">Mittag & Lounge</h3>
+        <div class="menu-item"><div><div class="item-name">Tagessuppe</div><div class="item-desc">Frisch zubereitet, täglich wechselnd</div></div><div class="item-price">6,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Weinauswahl Ortenau</div><div class="item-desc">Regionaler Winzer, wechselnd</div></div><div class="item-price">ab 5,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Käse & Brot</div><div class="item-desc">Regionale Auswahl, Feigensenf, Trauben</div></div><div class="item-price">11,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Frische Säfte & Tee</div><div class="item-desc">Saisonal, hausgemacht</div></div><div class="item-price">ab 3,80 €</div></div>
+      </div>
+    </div>
+    <p style="margin-top:2rem; font-size:.66rem; color:var(--gray); letter-spacing:.06em;">* Vollständige Karte vor Ort. Saisonale Änderungen vorbehalten.</p>
+  </div>
+</section>
+
+<!-- RESERVIERUNG -->
+<section id="reservierung" class="reserve-bg">
+  <div class="section-inner">
+    <span class="section-label reveal" style="color:rgba(255,255,255,.4);">Reservierung</span>
+    <h2 class="section-title reveal" style="color:var(--white);">Einen Tisch<br><em>reservieren</em></h2>
+    <div class="section-rule reveal" style="background:rgba(255,255,255,.2);"></div>
+
+    <div class="reserve-grid">
+      <!-- Info links -->
+      <div class="reveal">
+        <div class="reserve-info-block">
+          <span class="reserve-info-label">Öffnungszeiten</span>
+          <div class="reserve-info-value">Di – So<br>09:00 – 18:00 Uhr</div>
+          <p class="reserve-info-note">Montag Ruhetag</p>
+        </div>
+        <div class="reserve-info-block">
+          <span class="reserve-info-label">Adresse</span>
+          <div class="reserve-info-value">Hauptstraße 55<br>77704 Oberkirch</div>
+        </div>
+        <div class="reserve-info-block">
+          <span class="reserve-info-label">Hinweis</span>
+          <div class="reserve-info-value" style="font-size:1rem;">Reservierungen bis max. 8 Personen</div>
+          <p class="reserve-info-note">Für größere Gruppen bitte direkt kontaktieren. Wir bestätigen Ihre Reservierung innerhalb von 24 Stunden per E-Mail.</p>
+        </div>
+        <div class="reserve-info-block">
+          <span class="reserve-info-label">Telefon</span>
+          <!-- TODO: cambiar por el número real -->
+          <div class="reserve-info-value" style="font-size:1rem;"><a href="tel:+49XXXXXXXXX" style="color:var(--white); text-decoration:none;">+49 (0) XXX XXX XXXX</a></div>
+        </div>
+        <div class="reserve-info-block">
+          <span class="reserve-info-label">Instagram</span>
+          <div class="reserve-info-value" style="font-size:1rem;"><a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener noreferrer" style="color:var(--white); text-decoration:none;">@rahmiscafe</a></div>
+        </div>
+      </div>
+
+      <!-- Form rechts -->
+      <div class="reveal">
+        <div class="reserve-form" id="reserveFormWrapper">
+          <h3 class="form-title">Tisch anfragen</h3>
+          <p class="form-subtitle">Wir melden uns innerhalb von 24 Stunden bei Ihnen</p>
+
+          <form id="reserveForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">Vorname *</label>
+                <input class="form-input" type="text" id="fname" placeholder="Max" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Nachname *</label>
+                <input class="form-input" type="text" id="lname" placeholder="Mustermann" required/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">E-Mail *</label>
+                <input class="form-input" type="email" id="email" placeholder="max@beispiel.de" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Telefon</label>
+                <input class="form-input" type="tel" id="phone" placeholder="+49 ..."/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="date">Datum *</label>
+                <input class="form-input" type="date" id="date" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="time">Uhrzeit *</label>
+                <select class="form-select" id="time" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option>09:00</option>
+                  <option>09:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>13:00</option>
+                  <option>13:30</option>
+                  <option>14:00</option>
+                  <option>14:30</option>
+                  <option>15:00</option>
+                  <option>15:30</option>
+                  <option>16:00</option>
+                  <option>16:30</option>
+                  <option>17:00</option>
+                  <option>17:30</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <label class="form-label" for="guests">Anzahl Personen *</label>
+                <select class="form-select" id="guests" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option>1 Person</option>
+                  <option>2 Personen</option>
+                  <option>3 Personen</option>
+                  <option>4 Personen</option>
+                  <option>5 Personen</option>
+                  <option>6 Personen</option>
+                  <option>7 Personen</option>
+                  <option>8 Personen</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <label class="form-label" for="notes">Anmerkungen</label>
+                <textarea class="form-textarea" id="notes" placeholder="Allergien, besondere Anlässe, Sitzwünsche …"></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-divider"></div>
+              <p class="form-privacy">
+                Mit dem Absenden stimmen Sie unserer <a href="#">Datenschutzerklärung</a> zu. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Reservierungsanfrage verwendet.
+              </p>
+            </div>
+
+            <button type="submit" class="form-submit">Anfrage absenden</button>
+          </form>
+
+          <!-- Success message -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✓</div>
+            <h3 class="form-success-title">Anfrage erhalten</h3>
+            <p class="form-success-text">Vielen Dank! Wir haben Ihre Reservierungsanfrage erhalten und melden uns innerhalb von 24 Stunden per E-Mail bei Ihnen.</p>
+          </div>
+
+          <!-- Alternativas directas -->
+          <div class="reserve-alt">
+            <span class="reserve-alt-label">oder direkt kontaktieren</span>
+            <div class="reserve-alt-btns">
+              <!-- TODO: reemplazar 49XXXXXXXXX con número real (sin +, sin espacios) -->
+              <a href="https://wa.me/49XXXXXXXXX?text=Hallo%20Rahmi%27s%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Tisch%20reservieren."
+                 class="reserve-alt-btn reserve-whatsapp"
+                 target="_blank" rel="noopener noreferrer">
+                💬 WhatsApp
+              </a>
+              <!-- TODO: reemplazar con email real -->
+              <a href="mailto:info@rahmiscafe.de?subject=Tischreservierung%20Rahmi%27s%20Caf%C3%A9"
+                 class="reserve-alt-btn reserve-email">
+                ✉️ Per E-Mail
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section>
+  <div class="section-inner">
+    <span class="section-label reveal">Social Media</span>
+    <h2 class="section-title reveal">Folgen Sie uns<br><em>auf Instagram</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="insta-grid">
+      <div class="insta-cell reveal">R<div class="insta-cell-hint">Foto 1</div></div>
+      <div class="insta-cell reveal" style="background:var(--light);">s<div class="insta-cell-hint">Foto 2</div></div>
+      <div class="insta-cell reveal">R<div class="insta-cell-hint">Foto 3</div></div>
+      <div class="insta-cell reveal" style="background:var(--light);">s<div class="insta-cell-hint">Foto 4</div></div>
+    </div>
+    <p class="insta-link reveal" style="margin-top:1.5rem;">
+      <a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener noreferrer">@rahmiscafe</a> auf Instagram folgen
+    </p>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section id="bewertungen" class="reviews-bg">
+  <div class="section-inner">
+    <span class="section-label reveal">Bewertungen</span>
+    <h2 class="section-title reveal">Was unsere<br><em>Gäste sagen</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="reviews-grid">
+      <!-- Nota: estas son reseñas de ejemplo. Reemplazar con las reales del cliente -->
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Ein wunderbarer Ort mitten in Oberkirch. Der Kaffee ist hervorragend und der hausgemachte Kuchen einfach unschlagbar. Das Fachwerkhaus macht das Erlebnis besonders.“</p>
+        <div class="review-footer">
+          <span class="review-author">Maria K.</span>
+          <span class="review-source">Google &middot; 5 Sterne</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Rahmi's ist mein liebstes Café in der Region. Gemütliche Atmosphäre, freundlicher Service und immer frische Zutaten. Ich komme sehr gerne wieder!“</p>
+        <div class="review-footer">
+          <span class="review-author">Thomas B.</span>
+          <span class="review-source">Google &middot; 5 Sterne</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Das schönste Café in Oberkirch. Die Lounge-Atmosphäre am Nachmittag ist einzigartig. Perfekt für ein entspanntes Gespräch bei gutem Wein und Käse.“</p>
+        <div class="review-footer">
+          <span class="review-author">Sophie L.</span>
+          <span class="review-source">Google &middot; 5 Sterne</span>
+        </div>
+      </div>
+    </div>
+    <!-- TODO: reemplazar el link con la URL real de Google Reviews del restaurante -->
+    <div class="reviews-cta reveal">
+      <a href="https://g.page/r/XXXXX/review" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Alle Bewertungen auf Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="about-bg">
+  <div class="section-inner">
+    <span class="section-label reveal">Kontakt & Anfahrt</span>
+    <h2 class="section-title reveal">Wir freuen uns<br><em>auf Sie</em></h2>
+    <div class="section-rule reveal"></div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-block">
+          <span class="contact-label">Adresse</span>
+          <div class="contact-value">Hauptstraße 55<br>77704 Oberkirch</div>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Telefon</span>
+          <!-- TODO: cambiar por el número real -->
+          <div class="contact-value"><a href="tel:+49XXXXXXXXX">+49 (0) XXX XXX XXXX</a></div>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Instagram</span>
+          <div class="contact-value"><a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener noreferrer">@rahmiscafe</a></div>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Öffnungszeiten</span>
+          <div style="margin-top:.6rem;">
+            <div class="hours-row off"><span>Montag</span><span>Geschlossen</span></div>
+            <div class="hours-row on"><span>Dienstag – Freitag</span><span>09:00 – 18:00</span></div>
+            <div class="hours-row on"><span>Samstag – Sonntag</span><span>09:00 – 18:00</span></div>
+          </div>
+        </div>
+        <a href="#reservierung" class="btn btn-dark" style="margin-top:2rem; display:inline-block;">Tisch reservieren</a>
+      </div>
+      <div class="reveal">
+        <div class="map-box">
+          <iframe
+            src="https://maps.google.com/maps?q=Hauptstra%C3%9Fe+55%2C+77704+Oberkirch&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%"
+            style="border:0; display:block;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Rahmi's Café & Lounge – Hauptstraße 55, 77704 Oberkirch">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Rahmi's</div>
+    <div class="footer-sub">Café & Lounge · Oberkirch · Schwarzwald</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
