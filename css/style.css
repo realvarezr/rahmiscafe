@@ -49,23 +49,50 @@ nav {
   justify-content: center; align-items: center;
   text-align: center; padding: 8rem 2rem 4rem;
   position: relative; overflow: hidden;
-  background: var(--white);
+  background: var(--black);
+}
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-bg-layer {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
+}
+.hero-bg-layer:first-child { -webkit-mask-image: none; mask-image: none; z-index: 1; }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,.28) 100%);
+  pointer-events: none;
 }
 .hero-rs {
-  position: absolute;
+  position: absolute; z-index: 2;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(16rem, 38vw, 30rem);
-  font-weight: 600; color: rgba(0,0,0,.045);
+  font-weight: 600; color: rgba(255,255,255,.06);
   line-height: 1; user-select: none; pointer-events: none;
   top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
-.hero-content { position: relative; z-index: 2; }
-.hero-eyebrow { font-size: .62rem; letter-spacing: .42em; text-transform: uppercase; color: var(--gray); margin-bottom: 2rem; animation: fadeUp .9s ease both; }
-.hero-name { font-family: 'Great Vibes', cursive; font-size: clamp(5.5rem, 15vw, 12rem); color: var(--black); line-height: .9; animation: fadeUp .9s .12s ease both; font-weight: 400; }
-.hero-type { font-size: .7rem; letter-spacing: .52em; text-transform: uppercase; color: var(--gray); margin-top: 1.2rem; animation: fadeUp .9s .22s ease both; }
-.hero-rule { width: 50px; height: 1px; background: var(--black); margin: 2.5rem auto; opacity: .18; animation: fadeUp .9s .32s ease both; }
-.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-style: italic; color: var(--gray); font-weight: 300; line-height: 1.6; max-width: 420px; margin: 0 auto; animation: fadeUp .9s .42s ease both; }
+.hero-content {
+  position: relative; z-index: 3;
+  padding: 3.5rem 4.5rem;
+  background: rgba(10,9,9,.34);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero-content { background: rgba(8,7,7,.58); }
+}
+.hero-eyebrow { font-size: .62rem; letter-spacing: .42em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 2rem; animation: fadeUp .9s ease both; }
+.hero-name { font-family: 'Great Vibes', cursive; font-size: clamp(5.5rem, 15vw, 12rem); color: var(--white); line-height: .9; animation: fadeUp .9s .12s ease both; font-weight: 400; }
+.hero-type { font-size: .7rem; letter-spacing: .52em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-top: 1.2rem; animation: fadeUp .9s .22s ease both; }
+.hero-rule { width: 50px; height: 1px; background: var(--white); margin: 2.5rem auto; opacity: .35; animation: fadeUp .9s .32s ease both; }
+.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-style: italic; color: rgba(255,255,255,.85); font-weight: 300; line-height: 1.6; max-width: 420px; margin: 0 auto; animation: fadeUp .9s .42s ease both; }
 .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; animation: fadeUp .9s .52s ease both; }
+.hero-cta .btn-outline { color: var(--white); border-color: rgba(255,255,255,.4); }
+.hero-cta .btn-outline:hover { border-color: var(--white); }
 
 /* ── BOTONES ── */
 .btn { display: inline-block; padding: .9rem 2.6rem; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; text-decoration: none; transition: all .3s; cursor: pointer; border: none; }
@@ -95,7 +122,7 @@ section { padding: 8rem 2rem; }
 /* ── ABOUT ── */
 .about-bg { background: var(--cream); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
-.about-text p { font-size: .88rem; line-height: 2; color: var(--gray); margin-bottom: 1.4rem; }
+.about-text p { font-size: 1.02rem; line-height: 1.9; color: var(--gray); margin-bottom: 1.4rem; }
 .about-text p strong { color: var(--black); font-weight: 500; }
 .about-visual { aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--white); border: 1px solid rgba(0,0,0,.08); display: flex; align-items: center; justify-content: center; flex-direction: column; }
 .about-rs { font-family: 'Cormorant Garamond', serif; font-size: clamp(7rem, 16vw, 13rem); font-weight: 600; color: rgba(0,0,0,.06); line-height: 1; user-select: none; }
@@ -125,7 +152,7 @@ section { padding: 8rem 2rem; }
 .atmo-icon { font-size: 1.5rem; margin-bottom: 1.2rem; display: block; }
 .atmo-when { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .8rem; display: block; }
 .atmo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; color: var(--white); margin-bottom: .8rem; font-weight: 300; }
-.atmo-desc { font-size: .78rem; color: rgba(255,255,255,.5); line-height: 1.85; }
+.atmo-desc { font-size: .92rem; color: rgba(255,255,255,.55); line-height: 1.85; }
 
 /* ── MENÚ ── */
 .menu-bg { background: var(--cream); }
@@ -289,6 +316,7 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   nav { padding: 1.1rem 1.4rem; }
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
+  .hero-content { padding: 2.4rem 1.6rem; }
   .about-grid, .menu-grid, .contact-grid, .reserve-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .brand-grid, .atmo-grid, .reviews-grid { grid-template-columns: 1fr; }
   .insta-grid { grid-template-columns: repeat(2,1fr); }

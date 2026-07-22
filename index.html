@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rahmi's Café & Lounge – Vorschau</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      background: #f5f2ee;
+      color: #111010;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+    body {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 2rem; text-align: center;
+    }
+    .preview-logo { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 9vw, 5.5rem); line-height: 1; }
+    .preview-sub { font-size: .68rem; letter-spacing: .42em; text-transform: uppercase; color: #6b6666; margin-top: 1rem; }
+    .preview-note {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.25rem); color: #6b6666;
+      margin-top: 2.2rem; max-width: 480px; line-height: 1.6;
+    }
+    .preview-cards {
+      display: flex; gap: 1.6rem; flex-wrap: wrap; justify-content: center;
+      margin-top: 3rem;
+    }
+    .preview-card {
+      display: block; width: 260px; text-decoration: none; color: inherit;
+      border: 1px solid rgba(0,0,0,.1); background: #fff;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .preview-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,.1); }
+    .preview-swatch { height: 90px; }
+    .preview-card.classic .preview-swatch { background: #111010; }
+    .preview-card.warm .preview-swatch { background: #4A1E1E; }
+    .preview-card-body { padding: 1.6rem 1.4rem; }
+    .preview-card-title {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem;
+      margin-bottom: .4rem;
+    }
+    .preview-card-desc { font-size: .72rem; letter-spacing: .04em; color: #6b6666; line-height: 1.6; }
+    .preview-card-cta {
+      display: inline-block; margin-top: 1rem; font-size: .62rem; letter-spacing: .22em;
+      text-transform: uppercase; font-weight: 500; color: #111010;
+      border-bottom: 1px solid rgba(0,0,0,.25); padding-bottom: .2rem;
+    }
+    .preview-footer { margin-top: 3.5rem; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(0,0,0,.3); }
+  </style>
+</head>
+<body>
+  <div class="preview-logo">Rahmi's</div>
+  <p class="preview-sub">Café & Lounge · Oberkirch</p>
+  <p class="preview-note">Vorschau der Website — bitte wählen Sie eines der beiden Designs, um es sich anzusehen.</p>
+
+  <div class="preview-cards">
+    <a href="rahmis-cafe.html" class="preview-card classic">
+      <div class="preview-swatch"></div>
+      <div class="preview-card-body">
+        <div class="preview-card-title">Tema Clásico</div>
+        <div class="preview-card-desc">Negro · Crema · Blanco — elegante y minimalista.</div>
+        <span class="preview-card-cta">Ansehen →</span>
+      </div>
+    </a>
+    <a href="rahmis-cafe-warm.html" class="preview-card warm">
+      <div class="preview-swatch"></div>
+      <div class="preview-card-body">
+        <div class="preview-card-title">Tema Cálido</div>
+        <div class="preview-card-desc">Burdeos · Arena · Crema — cálido y acogedor.</div>
+        <span class="preview-card-cta">Ansehen →</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="preview-footer">Vorschau · nicht die endgültige Domain</p>
+</body>
+</html>
