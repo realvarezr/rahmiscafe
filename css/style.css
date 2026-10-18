@@ -168,6 +168,9 @@ section { padding: 8rem 2rem; }
 .item-name { font-size: 1.125rem; font-weight: 500; }
 .item-desc { font-size: 1rem; color: var(--gray); margin-top: .15rem; line-height: 1.5; }
 .item-price { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; margin-left: 1.2rem; white-space: nowrap; }
+.menu-pdf { margin-top: 3rem; display: flex; flex-direction: column; align-items: center; gap: .8rem; text-align: center; }
+.btn-lg { font-size: 1.0625rem; padding: 1.3rem 2.6rem; min-height: 64px; }
+.menu-pdf-size { font-size: 1rem; color: var(--gray); }
 .menu-note { margin-top: 2rem; font-size: 1rem; color: var(--gray); }
 
 /* ── RESERVIERUNG ── */
@@ -315,8 +318,8 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
 .reveal.visible { opacity:1; transform:none; }
 
 /* ── RESPONSIVE ── */
-/* El menú completo necesita ~1100px con texto de 15px; por debajo se usa el menú hamburguesa */
-@media (max-width: 1100px) {
+/* El menú completo necesita ~1200px con texto de 15px; por debajo se usa el menú hamburguesa */
+@media (max-width: 1240px) {
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
 }
