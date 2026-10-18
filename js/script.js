@@ -107,19 +107,33 @@ mobileNav.querySelectorAll('a').forEach(a => {
   });
 });
 
-// ── Scrollspy: resaltar sección activa en el nav ──
-const spySections = document.querySelectorAll('section[id]');
-const navAnchors  = document.querySelectorAll('.nav-links a[href^="#"]');
-const onScroll = () => {
-  let current = '';
-  spySections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
-  });
+// ── Scrollspy: resaltar en el nav la sección visible (IntersectionObserver) ──
+// Una sección cuenta como visible cuando cruza la franja central de la pantalla.
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"], .nav-mobile a[href^="#"]');
+const spyIds = new Set([...navAnchors].map(a => a.getAttribute('href').slice(1)));
+const spyVisible = new Set();
+const setActiveNav = () => {
+  // Si hay dos secciones en la franja, gana la que está más abajo en el documento
+  const sections = [...spyVisible].map(id => document.getElementById(id));
+  sections.sort((a, b) => a.offsetTop - b.offsetTop);
+  const current = sections.length ? sections[sections.length - 1].id : '';
   navAnchors.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    const isActive = a.getAttribute('href') === '#' + current;
+    a.classList.toggle('active', isActive);
+    if (isActive) a.setAttribute('aria-current', 'location');
+    else a.removeAttribute('aria-current');
   });
 };
-window.addEventListener('scroll', onScroll, { passive: true });
+const spyObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) spyVisible.add(e.target.id);
+    else spyVisible.delete(e.target.id);
+  });
+  setActiveNav();
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('section[id]').forEach(sec => {
+  if (spyIds.has(sec.id)) spyObs.observe(sec);
+});
 
 // ── Scroll to top ──
 const scrollTopBtn = document.getElementById('scrollTop');
