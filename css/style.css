@@ -4,6 +4,12 @@
    Legibilidad: texto mín. 15px, contraste WCAG AA (≥ 4.5:1)
    ================================================ */
 
+/* ── FUENTES (alojadas localmente – sin conexión a Google, DSGVO) ── */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500 600; font-display: swap; src: url('../assets/fonts/cormorant-garamond-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url('../assets/fonts/cormorant-garamond-italic-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Great Vibes'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/great-vibes-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400 600; font-display: swap; src: url('../assets/fonts/montserrat-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -213,7 +219,7 @@ section { padding: 8rem 2rem; }
 /* Honeypot anti-spam: fuera de pantalla, invisible para personas */
 .form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-error { margin-top: 1rem; padding: 1rem 1.2rem; border: 2px solid #A12622; background: #FDECEA; color: #7A1C19; font-size: 1.0625rem; font-weight: 500; line-height: 1.6; }
-.form-error a { color: inherit; font-weight: 700; white-space: nowrap; }
+.form-error a { color: inherit; font-weight: 600; white-space: nowrap; }
 .form-submit:disabled { opacity: .7; cursor: wait; }
 .form-success { display: none; text-align: center; padding: 3rem 2rem; }
 .form-success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
@@ -255,7 +261,11 @@ a.phone-link { display: inline-flex; align-items: center; min-height: 48px; font
 .hours-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 1.0625rem; color: var(--gray); padding: .5rem 0; border-bottom: 1px solid rgba(0,0,0,.08); }
 .hours-row.on { color: var(--black); }
 .hours-row.off { color: var(--gray); }
-.map-box { aspect-ratio: 4/3; overflow: hidden; border: 1px solid rgba(0,0,0,.12); }
+.route-card { background: var(--white); border: 1px solid rgba(74,30,30,.18); padding: 2.5rem 2rem; text-align: center; }
+.route-card-icon { font-size: 2.2rem; display: block; margin-bottom: .8rem; }
+.route-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; line-height: 1.2; margin-bottom: .6rem; }
+.route-card-address { font-style: normal; font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.8rem; }
+.route-card-note { margin-top: 1rem; font-size: .9375rem; color: var(--gray); }
 
 /* ── FOOTER ── */
 footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
@@ -304,7 +314,7 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   position: fixed; bottom: 2rem; right: 2rem; z-index: 90;
   width: 52px; height: 52px;
   background: var(--black); color: var(--white);
-  border: none; cursor: pointer; font-size: 1.2rem; line-height: 1;
+  border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 600; line-height: 1;
   opacity: 0; transform: translateY(8px);
   transition: opacity .3s, transform .3s, background .3s;
   pointer-events: none;

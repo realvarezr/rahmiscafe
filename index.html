@@ -33,9 +33,8 @@
     "sameAs": "https://www.instagram.com/rahmiscafe"
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="assets/fonts/great-vibes-latin.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -514,15 +513,12 @@
         <a href="#reservierung" class="btn btn-dark" style="margin-top:2rem; display:inline-block;">Tisch reservieren</a>
       </div>
       <div class="reveal">
-        <div class="map-box">
-          <iframe
-            src="https://maps.google.com/maps?q=Hauptstra%C3%9Fe+55%2C+77704+Oberkirch&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            width="100%" height="100%"
-            style="border:0; display:block;"
-            allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Rahmi's Café & Lounge – Hauptstraße 55, 77704 Oberkirch">
-          </iframe>
+        <div class="route-card">
+          <span class="route-card-icon" aria-hidden="true">📍</span>
+          <h3 class="route-card-title">So finden Sie uns</h3>
+          <address class="route-card-address">Rahmi's Café &amp; Lounge<br>Hauptstraße 55<br>77704 Oberkirch</address>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstra%C3%9Fe+55,+77704+Oberkirch" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Route planen</a>
+          <p class="route-card-note">Öffnet Google Maps in einem neuen Tab.</p>
         </div>
       </div>
     </div>
