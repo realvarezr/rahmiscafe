@@ -56,16 +56,11 @@ nav {
   background: var(--black);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.hero-bg-layer {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
-}
-.hero-bg-layer:first-child { -webkit-mask-image: none; mask-image: none; z-index: 1; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+/* Velo vinotinto al 70 %: el texto blanco cumple AA (≥ 5.4:1) incluso sobre la zona más clara de la foto */
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,.28) 100%);
+  background: rgba(74, 30, 30, .7);
   pointer-events: none;
 }
 .hero-rs {
@@ -76,11 +71,10 @@ nav {
   line-height: 1; user-select: none; pointer-events: none;
   top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
-/* Panel con opacidad .6: texto blanco ≥ 4.5:1 incluso sobre la zona más clara de la foto */
 .hero-content {
   position: relative; z-index: 3;
   padding: 3.5rem 4.5rem;
-  background: rgba(10,9,9,.6);
+  background: rgba(10,9,9,.25);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid rgba(255,255,255,.10);
@@ -88,7 +82,7 @@ nav {
   box-shadow: 0 20px 60px rgba(0,0,0,.25);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .hero-content { background: rgba(8,7,7,.7); }
+  .hero-content { background: rgba(8,7,7,.35); }
 }
 .hero-eyebrow { font-size: .9375rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 2rem; animation: fadeUp .9s ease both; }
 .hero-name { font-family: 'Great Vibes', cursive; font-size: clamp(5.5rem, 15vw, 12rem); color: var(--white); line-height: .9; animation: fadeUp .9s .12s ease both; font-weight: 400; }
@@ -128,14 +122,19 @@ section { padding: 8rem 2rem; }
 
 /* ── ABOUT ── */
 .about-bg { background: var(--cream); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
 .about-text p { font-size: 1.125rem; line-height: 1.8; color: var(--gray); margin-bottom: 1.4rem; }
 .about-text p strong { color: var(--black); font-weight: 600; }
-.about-visual { aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--white); border: 1px solid rgba(0,0,0,.08); display: flex; align-items: center; justify-content: center; flex-direction: column; }
-.about-rs { font-family: 'Cormorant Garamond', serif; font-size: clamp(7rem, 16vw, 13rem); font-weight: 600; color: rgba(0,0,0,.06); line-height: 1; user-select: none; }
-.about-script { position: absolute; bottom: 3.5rem; left: 0; right: 0; text-align: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--black); }
+.about-visual { aspect-ratio: 3/4; position: relative; overflow: hidden; background: var(--light); }
+.about-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-photo-small { display: block; width: 100%; max-width: 340px; height: auto; margin-top: .6rem; }
 .about-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--black); color: var(--white); padding: .5rem 1rem; font-size: .9375rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.photo-hint { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.04); padding: .6rem; font-size: .9375rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gray); text-align: center; }
+
+/* ── TERRASSE ── */
+.terrace-bg { background: var(--white); }
+.terrace-text { max-width: 680px; margin-top: 2.5rem; font-size: 1.125rem; line-height: 1.8; color: var(--gray); }
+.terrace-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.terrace-grid img { width: 100%; height: auto; display: block; }
 
 /* ── BRAND (interno – oculto) ── */
 .brand-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
@@ -152,10 +151,10 @@ section { padding: 8rem 2rem; }
 
 /* ── ATMOSPHÄRE ── */
 .atmo-bg { background: var(--black); }
-.atmo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+.atmo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3.5rem; }
 .atmo-card { padding: 3rem 2rem; border: 1px solid rgba(255,255,255,.15); transition: border-color .3s; }
 .atmo-card:hover { border-color: rgba(255,255,255,.35); }
-.atmo-photo-placeholder { aspect-ratio: 16/9; background: rgba(255,255,255,.04); border: 1px dashed rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: .9375rem; letter-spacing: .08em; text-transform: uppercase; color: var(--light); }
+.atmo-photo { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; margin-bottom: 1.5rem; background: var(--offblack); }
 .atmo-icon { font-size: 1.5rem; margin-bottom: 1.2rem; display: block; }
 .atmo-when { font-size: .9375rem; font-weight: 500; letter-spacing: .1em; color: var(--light); margin-bottom: .6rem; display: block; }
 .atmo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--white); margin-bottom: .8rem; font-weight: 600; line-height: 1.2; }
@@ -234,9 +233,7 @@ section { padding: 8rem 2rem; }
 
 /* ── INSTAGRAM ── */
 .insta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; margin-top: 3rem; }
-.insta-cell { aspect-ratio: 1; background: var(--cream); display: flex; align-items: center; justify-content: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: rgba(0,0,0,.12); transition: background .3s; cursor: pointer; position: relative; border: 1px dashed rgba(0,0,0,.15); }
-.insta-cell:hover { background: var(--light); }
-.insta-cell-hint { position: absolute; bottom: .5rem; left: 0; right: 0; text-align: center; font-family: 'Montserrat', sans-serif; font-size: .9375rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gray); }
+.insta-photo { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: var(--cream); }
 .insta-link { text-align: center; margin-top: 2rem; font-size: 1.0625rem; color: var(--gray); }
 .insta-link a { color: var(--black); text-decoration: none; font-weight: 600; }
 
@@ -327,7 +324,7 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   nav { padding: .7rem 1.2rem; }
   .hero { padding: 7rem 1.2rem 3rem; }
   .hero-content { padding: 2.4rem 1.4rem; }
-  .about-grid, .menu-grid, .contact-grid, .reserve-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-grid, .menu-grid, .contact-grid, .reserve-grid, .terrace-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .brand-grid, .atmo-grid, .reviews-grid { grid-template-columns: 1fr; }
   .insta-grid { grid-template-columns: repeat(2,1fr); }
   .form-row { grid-template-columns: 1fr; }

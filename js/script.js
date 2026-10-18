@@ -2,44 +2,6 @@
 // Rahmi's Café & Lounge – Script principal
 // ================================================
 
-// ── Hero: fondo con fotos y transición en barrido difuminado (izquierda → derecha) ──
-const heroLayers = document.querySelectorAll('.hero-bg-layer');
-if (heroLayers.length > 1) {
-  let heroCurrent = 0;
-  let heroZ = 1;
-  const HERO_FEATHER = 16;   // ancho de la franja difuminada, en % del contenedor
-  const HERO_DURATION = 1400; // duración del barrido, ms
-
-  function setHeroMask(layer, edge) {
-    const blackEnd = edge - HERO_FEATHER;
-    const transStart = edge + HERO_FEATHER;
-    const mask = `linear-gradient(to right, black 0%, black ${blackEnd}%, transparent ${transStart}%, transparent 100%)`;
-    layer.style.maskImage = mask;
-    layer.style.webkitMaskImage = mask;
-  }
-
-  function revealHeroLayer(layer) {
-    const start = performance.now();
-    function step(now) {
-      const p = Math.min((now - start) / HERO_DURATION, 1);
-      const edge = -HERO_FEATHER + p * (100 + 2 * HERO_FEATHER);
-      setHeroMask(layer, edge);
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  setInterval(() => {
-    const next = (heroCurrent + 1) % heroLayers.length;
-    const layer = heroLayers[next];
-    heroZ++;
-    layer.style.zIndex = heroZ;
-    setHeroMask(layer, -HERO_FEATHER); // estado inicial: totalmente oculta
-    revealHeroLayer(layer);
-    heroCurrent = next;
-  }, 5000);
-}
-
 // ── Scroll reveal ──
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {

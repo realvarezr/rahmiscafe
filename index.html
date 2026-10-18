@@ -48,6 +48,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">Das Lokal</a></li>
+    <li><a href="#terrasse">Terrasse</a></li>
     <li><a href="#karte">Karte</a></li>
     <li><a href="#atmosphare">Atmosphäre</a></li>
     <li><a href="#bewertungen">Bewertungen</a></li>
@@ -61,6 +62,7 @@
 <!-- MOBILE NAV -->
 <nav class="nav-mobile" id="mobileNav" aria-label="Mobiles Menü">
   <a href="#about">Das Lokal</a>
+  <a href="#terrasse">Terrasse</a>
   <a href="#karte">Karte</a>
   <a href="#atmosphare">Atmosphäre</a>
   <a href="#bewertungen">Bewertungen</a>
@@ -70,10 +72,8 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg">
-    <div class="hero-bg-layer" style="background-image:url('assets/img/foto-01.webp');"></div>
-    <div class="hero-bg-layer" style="background-image:url('assets/img/foto-02.webp');"></div>
-    <div class="hero-bg-layer" style="background-image:url('assets/img/foto-03.webp');"></div>
+  <div class="hero-bg">
+    <img class="hero-img" src="assets/img/foto-09.webp" width="1600" height="1112" alt="Rahmi's Café &amp; Lounge im historischen Fachwerkhaus an der Hauptstraße in Oberkirch mit beleuchtetem Wintergarten" fetchpriority="high">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-rs">RS</div>
@@ -130,14 +130,27 @@
         <p>Mitten in der historischen Altstadt von Oberkirch, hinter einer der schönsten Fachwerkfassaden der Hauptstraße, liegt <strong>Rahmi's Café & Lounge</strong> — ein Ort zum Ankommen, Durchatmen und wirklich Genießen.</p>
         <p>Morgens duftet es nach frisch gemahlenem Kaffee und warmem Gebäck. Mittags eine echte Auszeit vom Alltag. Nachmittags verwöhnt hausgemachter Kuchen die Seele.</p>
         <p><strong>Rahman</strong> hat diesen Ort mit Persönlichkeit gefüllt — und das spürt man vom ersten Schritt an.</p>
+        <img class="about-photo-small" src="assets/img/foto-30.webp" width="680" height="907" alt="Eingang von Rahmi's Café &amp; Lounge mit Stufen und Pflanzenkübeln" loading="lazy" decoding="async">
         <a href="#reservierung" class="btn btn-outline" style="margin-top:2rem; display:inline-block;">Tisch reservieren</a>
       </div>
       <div class="about-visual reveal">
-        <div class="about-rs">RS</div>
-        <div class="about-script">Rahmi's</div>
+        <img src="assets/img/foto-36.webp" width="1000" height="1333" alt="Gastraum mit Holzbalkendecke, Rattanstühlen und Sonnenlicht durch die Sprossenfenster" loading="lazy" decoding="async">
         <div class="about-badge">Fachwerkhaus · Oberkirch</div>
-        <div class="photo-hint">📸 Foto des Lokals</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERRASSE -->
+<section id="terrasse" class="terrace-bg">
+  <div class="section-inner">
+    <span class="section-label reveal">Unsere Terrasse</span>
+    <h2 class="section-title reveal">Mitten in der<br><em>Fußgängerzone</em></h2>
+    <div class="section-rule reveal"></div>
+    <p class="terrace-text reveal">Bei schönem Wetter genießen Sie Kaffee, Frühstück und Flammkuchen auf unserer großen Terrasse – mitten in der Altstadt von Oberkirch, mit Blick auf die Fachwerkhäuser.</p>
+    <div class="terrace-grid">
+      <img class="reveal" src="assets/img/foto-31.webp" width="1060" height="1413" alt="Avocado-Brot mit Tomate, Feta und Spiegelei auf der Terrasse in der Fußgängerzone" loading="lazy" decoding="async">
+      <img class="reveal" src="assets/img/foto-27.webp" width="1060" height="1413" alt="Frischer Smoothie vor den Fachwerkhäusern und der Terrasse in der Altstadt" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -185,25 +198,32 @@
     <div class="section-rule reveal" style="background:rgba(255,255,255,.2);"></div>
     <div class="atmo-grid">
       <div class="atmo-card reveal">
-        <div class="atmo-photo-placeholder">📸 Foto Morgens</div>
+        <img class="atmo-photo" src="assets/img/foto-11.webp" width="940" height="1253" alt="Avocado-Brot mit pochiertem Ei, Feta und Salat" loading="lazy" decoding="async">
         <span class="atmo-icon">☕</span>
         <span class="atmo-when">09:00 – 12:00</span>
         <h3 class="atmo-name">Der Morgen</h3>
         <p class="atmo-desc">Frisch gebrühter Kaffee, hausgemachtes Gebäck und die Ruhe des Vormittags. Der perfekte Start in den Tag — in einem der schönsten Fachwerkhäuser Oberkirchs.</p>
       </div>
       <div class="atmo-card reveal">
-        <div class="atmo-photo-placeholder">📸 Foto Mittags</div>
+        <img class="atmo-photo" src="assets/img/foto-26.webp" width="940" height="891" alt="Salat mit gegrillter Hähnchenbrust, Croûtons und Parmesan" loading="lazy" decoding="async">
         <span class="atmo-icon">🍽️</span>
         <span class="atmo-when">12:00 – 15:00</span>
         <h3 class="atmo-name">Die Mittagspause</h3>
         <p class="atmo-desc">Leichte Gerichte, gute Gespräche, kein Stress. Für alle, die sich eine echte Auszeit verdient haben — mitten im Herzen von Oberkirch.</p>
       </div>
       <div class="atmo-card reveal">
-        <div class="atmo-photo-placeholder">📸 Foto Nachmittags</div>
+        <img class="atmo-photo" src="assets/img/foto-34.webp" width="940" height="705" alt="Hausgemachte Torten in der Kuchenvitrine" loading="lazy" decoding="async">
         <span class="atmo-icon">🍰</span>
         <span class="atmo-when">15:00 – 18:00</span>
         <h3 class="atmo-name">Der Nachmittag</h3>
         <p class="atmo-desc">Hausgemachter Kuchen, Tee oder ein Glas Wein aus der Ortenau. Die Lounge-Stimmung lädt zum Verweilen ein — Zeit vergeht hier langsamer.</p>
+      </div>
+      <div class="atmo-card reveal">
+        <img class="atmo-photo" src="assets/img/foto-04.webp" width="940" height="1253" alt="Flammkuchen auf einem Tisch auf der Terrasse" loading="lazy" decoding="async">
+        <span class="atmo-icon">🍷</span>
+        <span class="atmo-when">18:00 – 20:00</span>
+        <h3 class="atmo-name">Der Abend</h3>
+        <p class="atmo-desc">Flammkuchen, ein Glas Wein aus der Ortenau und entspannte Lounge-Atmosphäre zum Ausklang des Tages.</p>
       </div>
     </div>
   </div>
@@ -395,10 +415,14 @@
     <h2 class="section-title reveal">Folgen Sie uns<br><em>auf Instagram</em></h2>
     <div class="section-rule reveal"></div>
     <div class="insta-grid">
-      <div class="insta-cell reveal">R<div class="insta-cell-hint">Foto 1</div></div>
-      <div class="insta-cell reveal" style="background:var(--light);">s<div class="insta-cell-hint">Foto 2</div></div>
-      <div class="insta-cell reveal">R<div class="insta-cell-hint">Foto 3</div></div>
-      <div class="insta-cell reveal" style="background:var(--light);">s<div class="insta-cell-hint">Foto 4</div></div>
+      <img class="insta-photo reveal" src="assets/img/foto-05.webp" width="520" height="550" alt="Bowl mit Heidelbeeren, Banane, Erdbeeren, Melone und Kokosraspeln" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-12.webp" width="520" height="693" alt="Waffeln mit frischen Erdbeeren und Vanilleeis" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-13.webp" width="520" height="693" alt="Cappuccino mit „I ♥ U“ aus Kakaopulver auf dem Milchschaum" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-15.webp" width="520" height="693" alt="Eisbecher mit Sahne und Kirschen" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-17.webp" width="520" height="693" alt="Salat mit Avocado, pochiertem Ei, Walnüssen und Tomaten" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-18.webp" width="520" height="693" alt="Waffel mit Vanilleeis, Erdbeeren und Orangen, dahinter ein Stück Kuchen" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-24.webp" width="520" height="693" alt="Süße Spezialität mit frischem Obst, Erdbeeren und Schokoladensauce" loading="lazy" decoding="async">
+      <img class="insta-photo reveal" src="assets/img/foto-29.webp" width="520" height="693" alt="Avocado-Brot mit Tomate, Käse und Spiegelei" loading="lazy" decoding="async">
     </div>
     <p class="insta-link reveal" style="margin-top:1.5rem;">
       <a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener noreferrer">@rahmiscafe</a> auf Instagram folgen
