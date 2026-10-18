@@ -4,8 +4,6 @@ Alle Schriften stehen unter der SIL Open Font License, Version 1.1 (Text unten).
 
 - Cormorant Garamond (cormorant-garamond-latin.woff2, cormorant-garamond-italic-latin.woff2)
   Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)
-- Great Vibes (great-vibes-latin.woff2)
-  Copyright 2010 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)
 - Montserrat (montserrat-latin.woff2)
   Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)
 
