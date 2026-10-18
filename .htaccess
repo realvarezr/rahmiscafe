@@ -17,6 +17,7 @@ AddDefaultCharset UTF-8
   AddType image/svg+xml .svg
   AddType font/woff2 .woff2
   AddType application/pdf .pdf
+  AddType application/manifest+json .webmanifest
 </IfModule>
 
 # ── Interne Dateien nicht ausliefern ──

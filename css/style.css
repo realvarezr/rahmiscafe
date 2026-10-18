@@ -39,13 +39,13 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
-  padding: .8rem 3rem;
+  padding: 7px 3rem;   /* logo 60px + 2×7px + borde 1px = 75px (máx. 76) */
   background: rgba(255, 252, 249, 0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
 .nav-brand { display: flex; align-items: center; min-height: 48px; text-decoration: none; }
-.nav-logo { display: block; height: 44px; width: auto; }
+.nav-logo { display: block; height: 60px; width: auto; }
 .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
 .nav-links a { color: var(--black); text-decoration: none; font-size: .9375rem; letter-spacing: .06em; font-weight: 500; opacity: 1; transition: color .3s; padding: .3rem 0; border-bottom: 2px solid transparent; }
 .nav-links a:hover { color: var(--offblack); }
@@ -339,6 +339,7 @@ footer { background: var(--black); padding: 3rem 7rem 3rem 3.5rem; display: flex
 }
 @media (max-width: 768px) {
   nav { padding: .7rem 1.2rem; }
+  .nav-logo { height: 50px; }
   .hero { padding: 7rem 1.2rem 3rem; }
   .hero-content { padding: 2.4rem 1.4rem; }
   .hero-tagline { font-size: 1.125rem; }
