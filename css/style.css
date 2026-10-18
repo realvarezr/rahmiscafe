@@ -1,17 +1,17 @@
 /* ================================================
    Rahmi's Café & Lounge – Stylesheet principal
-   Tema: Clásico (negro / crema / blanco)
+   Tema: Cálido (vinotinto / arena / crema)
    ================================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --black:    #111010;
-  --offblack: #1e1c1c;
-  --gray:     #6b6666;
-  --light:    #d8d3ce;
-  --cream:    #f5f2ee;
-  --white:    #ffffff;
+  --black:    #4A1E1E;   /* burgundy / vino tinto oscuro */
+  --offblack: #6B2929;   /* burgundy más claro para hover */
+  --gray:     #8A7060;   /* taupe cálido */
+  --light:    #E8D5C0;   /* arena cálida */
+  --cream:    #FDF0E6;   /* crema / pergamino */
+  --white:    #FFFCF9;   /* blanco cálido */
 }
 
 html { scroll-behavior: smooth; }
@@ -29,7 +29,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.4rem 3.5rem;
-  background: rgba(255,255,255,.96);
+  background: rgba(255, 252, 249, 0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
@@ -217,7 +217,7 @@ section { padding: 8rem 2rem; }
 .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
 .review-card { padding: 2.5rem 2rem; border: 1px solid rgba(0,0,0,.09); background: var(--cream); transition: box-shadow .3s; }
 .review-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,.07); }
-.review-stars { color: #C4933F; font-size: 1rem; letter-spacing: .12em; margin-bottom: 1.2rem; }
+.review-stars { color: #B8862A; font-size: 1rem; letter-spacing: .12em; margin-bottom: 1.2rem; }
 .review-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--gray); line-height: 1.75; margin-bottom: 1.5rem; }
 .review-footer { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(0,0,0,.07); padding-top: 1rem; }
 .review-author { font-size: .72rem; font-weight: 500; color: var(--black); letter-spacing: .04em; }
