@@ -13,58 +13,61 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// ── Fecha mínima: hoy (fecha local, no UTC) ──
-const dateInput = document.getElementById('date');
-const now = new Date();
-dateInput.min = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
-
-// ── Formulario de reserva: envío real a reservierung.php ──
+// ── Formulario de reserva (solo en la página principal) ──
 const reserveForm = document.getElementById('reserveForm');
-const formError = document.getElementById('formError');
-reserveForm.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  formError.hidden = true;
-  const required = this.querySelectorAll('[required]');
-  let valid = true;
-  required.forEach(field => {
-    const empty = !field.value.trim() || (field.type === 'email' && !field.checkValidity());
-    field.style.borderColor = empty ? '#A12622' : '';
-    field.setAttribute('aria-invalid', String(empty));
-    if (empty) valid = false;
+if (reserveForm) {
+  // ── Fecha mínima: hoy (fecha local, no UTC) ──
+  const dateInput = document.getElementById('date');
+  const now = new Date();
+  dateInput.min = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
+
+  // ── Formulario de reserva: envío real a reservierung.php ──
+  const formError = document.getElementById('formError');
+  reserveForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    formError.hidden = true;
+    const required = this.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      const empty = !field.value.trim() || (field.type === 'email' && !field.checkValidity());
+      field.style.borderColor = empty ? '#A12622' : '';
+      field.setAttribute('aria-invalid', String(empty));
+      if (empty) valid = false;
+    });
+    if (!valid) {
+      this.querySelector('[aria-invalid="true"]').focus();
+      return;
+    }
+
+    const button = this.querySelector('.form-submit');
+    const label = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Wird gesendet …';
+    let ok = false;
+    try {
+      const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+      const data = await res.json();
+      ok = res.ok && data.ok === true;
+    } catch (err) {
+      ok = false;
+    }
+    button.disabled = false;
+    button.textContent = label;
+
+    if (!ok) {
+      formError.hidden = false;
+      formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    const wrapper = document.getElementById('reserveFormWrapper');
+    wrapper.querySelectorAll('.form-title, .form-subtitle').forEach(el => el.style.display = 'none');
+    this.style.display = 'none';
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    success.setAttribute('tabindex', '-1');
+    success.focus();
   });
-  if (!valid) {
-    this.querySelector('[aria-invalid="true"]').focus();
-    return;
-  }
-
-  const button = this.querySelector('.form-submit');
-  const label = button.textContent;
-  button.disabled = true;
-  button.textContent = 'Wird gesendet …';
-  let ok = false;
-  try {
-    const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
-    const data = await res.json();
-    ok = res.ok && data.ok === true;
-  } catch (err) {
-    ok = false;
-  }
-  button.disabled = false;
-  button.textContent = label;
-
-  if (!ok) {
-    formError.hidden = false;
-    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    return;
-  }
-  const wrapper = document.getElementById('reserveFormWrapper');
-  wrapper.querySelectorAll('.form-title, .form-subtitle').forEach(el => el.style.display = 'none');
-  this.style.display = 'none';
-  const success = document.getElementById('formSuccess');
-  success.style.display = 'block';
-  success.setAttribute('tabindex', '-1');
-  success.focus();
-});
+}
 
 // ── Menú hamburguesa (móvil) ──
 const hamburger = document.getElementById('hamburger');

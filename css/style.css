@@ -275,6 +275,20 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
 .footer-links a { font-size: .9375rem; font-weight: 500; color: var(--light); text-decoration: none; letter-spacing: .06em; transition: color .3s; }
 .footer-links a:hover { color: var(--white); text-decoration: underline; }
 
+/* ── PÁGINAS LEGALES (Impressum / Datenschutz) ── */
+.legal-main { background: var(--cream); padding: 9rem 2rem 6rem; }
+.legal { max-width: 760px; margin: 0 auto; }
+.legal-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 500; line-height: 1.1; hyphens: manual; }
+.legal h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; line-height: 1.25; margin: 2.8rem 0 .8rem; }
+.legal p, .legal li { font-size: 1.125rem; line-height: 1.7; color: var(--black); }
+.legal p + p { margin-top: 1rem; }
+.legal ul { margin: .8rem 0 1rem 1.4rem; }
+.legal li + li { margin-top: .3rem; }
+.legal a:not(.btn) { color: var(--black); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.legal-intro { margin-top: 2rem; }
+.legal-date { margin-top: 2.5rem; color: var(--gray) !important; }
+.legal-back { margin-top: 3rem; }
+
 /* ── HAMBURGER / MOBILE NAV ── */
 .nav-hamburger {
   display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
@@ -352,4 +366,5 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   .strip-hours { gap: 1.5rem; justify-content: center; }
   .about-badge { top: 1rem; right: 1rem; left: 1rem; text-align: center; }
   footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.2rem; }
+  .legal-main { padding: 7rem 1.2rem 4rem; }
 }
