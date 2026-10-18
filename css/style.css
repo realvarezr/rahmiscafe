@@ -65,10 +65,11 @@ nav {
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-/* Velo vinotinto al 70 %: el texto blanco cumple AA (≥ 5.4:1) incluso sobre la zona más clara de la foto */
+/* Degradado vinotinto sobre la foto (sin panel), más denso abajo.
+   Opacidad .80 → .60 (no .75 → .35): con .35 el texto quedaba en 2.9:1; así el peor píxel bajo el texto da ≥ 5.4:1 */
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: rgba(74, 30, 30, .7);
+  background: linear-gradient(to top, rgba(40,12,12,.8) 0%, rgba(40,12,12,.6) 100%);
   pointer-events: none;
 }
 .hero-rs {
@@ -82,15 +83,6 @@ nav {
 .hero-content {
   position: relative; z-index: 3;
   padding: 3.5rem 4.5rem;
-  background: rgba(10,9,9,.25);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 6px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
-}
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .hero-content { background: rgba(8,7,7,.35); }
 }
 .hero-eyebrow { font-size: .9375rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 2rem; animation: fadeUp .9s ease both; }
 .hero-name { font-family: 'Great Vibes', cursive; font-size: clamp(5.5rem, 15vw, 12rem); color: var(--white); line-height: .9; animation: fadeUp .9s .12s ease both; font-weight: 400; }
@@ -335,8 +327,8 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
 .reveal.visible { opacity:1; transform:none; }
 
 /* ── RESPONSIVE ── */
-/* El menú completo necesita ~1200px con texto de 15px; por debajo se usa el menú hamburguesa */
-@media (max-width: 1240px) {
+/* Menú de 5 elementos: cabe desde 1024px; por debajo se usa el menú hamburguesa */
+@media (max-width: 1023px) {
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
 }
