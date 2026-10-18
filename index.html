@@ -165,12 +165,14 @@
         <p>Mitten in der historischen Altstadt von Oberkirch, hinter einer der schönsten Fachwerkfassaden der Hauptstraße, liegt <strong>Rahmi's Café & Lounge</strong> — ein Ort zum Ankommen, Durchatmen und wirklich Genießen.</p>
         <p>Morgens duftet es nach frisch gemahlenem Kaffee und warmem Gebäck. Mittags eine echte Auszeit vom Alltag. Nachmittags verwöhnt hausgemachter Kuchen die Seele.</p>
         <p><strong>Rahman</strong> hat diesen Ort mit Persönlichkeit gefüllt — und das spürt man vom ersten Schritt an.</p>
-        <img class="about-photo-small" src="assets/img/foto-30.webp" width="680" height="907" alt="Eingang von Rahmi's Café &amp; Lounge mit Stufen und Pflanzenkübeln" loading="lazy" decoding="async">
         <a href="#reservierung" class="btn btn-outline" style="margin-top:2rem; display:inline-block;">Tisch reservieren</a>
       </div>
       <div class="about-visual reveal">
-        <img src="assets/img/foto-36.webp" width="1000" height="1333" alt="Gastraum mit Holzbalkendecke, Rattanstühlen und Sonnenlicht durch die Sprossenfenster" loading="lazy" decoding="async">
-        <div class="about-badge">Fachwerkhaus · Oberkirch</div>
+        <div class="about-main">
+          <img src="assets/img/foto-36.webp" width="1000" height="1333" alt="Gastraum mit Holzbalkendecke, Rattanstühlen und Sonnenlicht durch die Sprossenfenster" loading="lazy" decoding="async">
+          <div class="about-badge">Fachwerkhaus · Oberkirch</div>
+        </div>
+        <img class="about-photo-small" src="assets/img/foto-30.webp" width="680" height="907" alt="Eingang von Rahmi's Café &amp; Lounge mit Stufen und Pflanzenkübeln" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -199,28 +201,24 @@
     <div class="atmo-grid">
       <div class="atmo-card reveal">
         <img class="atmo-photo" src="assets/img/foto-11.webp" width="940" height="1253" alt="Avocado-Brot mit pochiertem Ei, Feta und Salat" loading="lazy" decoding="async">
-        <span class="atmo-icon">☕</span>
         <span class="atmo-when">09:00 – 12:00</span>
         <h3 class="atmo-name">Der Morgen</h3>
         <p class="atmo-desc">Frisch gebrühter Kaffee, hausgemachtes Gebäck und die Ruhe des Vormittags. Der perfekte Start in den Tag — in einem der schönsten Fachwerkhäuser Oberkirchs.</p>
       </div>
       <div class="atmo-card reveal">
         <img class="atmo-photo" src="assets/img/foto-26.webp" width="940" height="891" alt="Salat mit gegrillter Hähnchenbrust, Croûtons und Parmesan" loading="lazy" decoding="async">
-        <span class="atmo-icon">🍽️</span>
         <span class="atmo-when">12:00 – 15:00</span>
         <h3 class="atmo-name">Die Mittagspause</h3>
         <p class="atmo-desc">Leichte Gerichte, gute Gespräche, kein Stress. Für alle, die sich eine echte Auszeit verdient haben — mitten im Herzen von Oberkirch.</p>
       </div>
       <div class="atmo-card reveal">
         <img class="atmo-photo" src="assets/img/foto-34.webp" width="940" height="705" alt="Hausgemachte Torten in der Kuchenvitrine" loading="lazy" decoding="async">
-        <span class="atmo-icon">🍰</span>
         <span class="atmo-when">15:00 – 18:00</span>
         <h3 class="atmo-name">Der Nachmittag</h3>
         <p class="atmo-desc">Hausgemachter Kuchen, Tee oder ein Glas Wein aus der Ortenau. Die Lounge-Stimmung lädt zum Verweilen ein — Zeit vergeht hier langsamer.</p>
       </div>
       <div class="atmo-card reveal">
         <img class="atmo-photo" src="assets/img/foto-04.webp" width="940" height="1253" alt="Flammkuchen auf einem Tisch auf der Terrasse" loading="lazy" decoding="async">
-        <span class="atmo-icon">🍷</span>
         <span class="atmo-when">18:00 – 20:00</span>
         <h3 class="atmo-name">Der Abend</h3>
         <p class="atmo-desc">Flammkuchen, ein Glas Wein aus der Ortenau und entspannte Lounge-Atmosphäre zum Ausklang des Tages.</p>
@@ -404,7 +402,7 @@
 
           <!-- Success message -->
           <div class="form-success" id="formSuccess">
-            <div class="form-success-icon">✓</div>
+            <svg class="form-success-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>
             <h3 class="form-success-title">Anfrage erhalten</h3>
             <p class="form-success-text">Vielen Dank! Wir haben Ihre Reservierungsanfrage erhalten und melden uns innerhalb von 24 Stunden per E-Mail bei Ihnen.</p>
           </div>
@@ -415,7 +413,7 @@
               <a href="tel:+4978027057005">+49 7802 7057005</a>
             </p>
             <!-- E-Mail-Button: Adresse noch nicht bestätigt
-            <a href="mailto:[BITTE ERGÄNZEN]" class="reserve-alt-btn">✉️ Per E-Mail</a>
+            <a href="mailto:[BITTE ERGÄNZEN]" class="social-btn"><svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span>Per E-Mail</span></a>
             -->
           </div>
         </div>
@@ -451,12 +449,10 @@
 </section>
 
 <!-- BEWERTUNGEN -->
-<section id="bewertungen" class="reviews-bg">
-  <div class="section-inner">
-    <span class="section-label reveal">Bewertungen</span>
-    <h2 class="section-title reveal">Was unsere<br><em>Gäste sagen</em></h2>
-    <div class="section-rule reveal"></div>
-    <p class="reviews-intro reveal">Wie hat es Ihnen bei uns gefallen? Lesen Sie die Bewertungen unserer Gäste auf Google – und teilen Sie gern Ihre eigene Erfahrung.</p>
+<section id="bewertungen" class="reviews-band" aria-label="Bewertungen">
+  <div class="section-inner reviews-band-inner">
+    <p class="reviews-band-text">Waren Sie schon bei uns? Lesen Sie, was unsere Gäste sagen.</p>
+    <a href="https://www.google.com/maps/place/?q=place_id:ChIJ62ft_gvXlkcRAl8UFvPR1lk" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Bewertungen auf Google lesen</a>
     <!-- Vorlage für 3 echte Google-Bewertungen: Text, Name und Quelle ergänzen und Kommentar entfernen.
     <div class="reviews-grid">
       <div class="review-card reveal">
@@ -485,9 +481,6 @@
       </div>
     </div>
     -->
-    <div class="reviews-cta reveal">
-      <a href="https://www.google.com/maps/place/?q=place_id:ChIJ62ft_gvXlkcRAl8UFvPR1lk" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Bewertungen auf Google lesen</a>
-    </div>
   </div>
 </section>
 
@@ -525,7 +518,7 @@
       </div>
       <div class="reveal">
         <div class="route-card">
-          <span class="route-card-icon" aria-hidden="true">📍</span>
+          <svg class="route-card-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
           <h3 class="route-card-title">So finden Sie uns</h3>
           <address class="route-card-address">Rahmi's Café &amp; Lounge<br>Hauptstraße 55<br>77704 Oberkirch</address>
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstra%C3%9Fe+55,+77704+Oberkirch" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Route planen</a>
@@ -555,7 +548,7 @@
   </div>
 </footer>
 
-<button class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen">↑</button>
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen"><svg class="scroll-top-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></button>
 
 <script src="js/script.js?v=20261018"></script>
 </body>
