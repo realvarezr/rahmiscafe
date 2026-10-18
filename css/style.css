@@ -22,6 +22,8 @@
   --gold:     #8C6418;   /* estrellas de reseñas (4.75:1 sobre crema) */
 }
 
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
@@ -141,19 +143,6 @@ section { padding: 8rem 2rem; }
 .terrace-text { max-width: 680px; margin-top: 2.5rem; font-size: 1.125rem; line-height: 1.8; color: var(--gray); }
 .terrace-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
 .terrace-grid img { width: 100%; height: auto; display: block; }
-
-/* ── BRAND (interno – oculto) ── */
-.brand-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
-.brand-card { padding: 2.5rem 2rem; border: 1px solid rgba(0,0,0,.1); }
-.brand-card-label { font-size: .9375rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin-bottom: 1.2rem; display: block; }
-.palette { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .5rem; }
-.swatch { width: 40px; height: 40px; }
-.swatch-name { font-size: .9375rem; color: var(--gray); margin-top: .3rem; letter-spacing: .04em; }
-.logo-preview-script { font-family: 'Great Vibes', cursive; font-size: 2.6rem; color: var(--black); }
-.logo-preview-rule { width: 100%; height: 1px; background: rgba(0,0,0,.15); margin: .5rem 0; }
-.logo-preview-sub { font-size: .9375rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gray); }
-.font-display { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; line-height: 1.1; }
-.font-body { font-size: .9375rem; color: var(--gray); margin-top: .8rem; line-height: 1.8; }
 
 /* ── ATMOSPHÄRE ── */
 .atmo-bg { background: var(--black); }
@@ -356,7 +345,7 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   .hero { padding: 7rem 1.2rem 3rem; }
   .hero-content { padding: 2.4rem 1.4rem; }
   .about-grid, .menu-grid, .contact-grid, .reserve-grid, .terrace-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .brand-grid, .atmo-grid, .reviews-grid { grid-template-columns: 1fr; }
+  .atmo-grid, .reviews-grid { grid-template-columns: 1fr; }
   .insta-grid { grid-template-columns: repeat(2,1fr); }
   .form-row { grid-template-columns: 1fr; }
   .form-group.full, .form-divider, .form-privacy { grid-column: span 1; }
