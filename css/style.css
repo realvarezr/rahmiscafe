@@ -232,7 +232,8 @@ section { padding: 8rem 2rem; }
 .review-footer { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .4rem 1rem; border-top: 1px solid rgba(0,0,0,.1); padding-top: 1rem; }
 .review-author { font-size: 1rem; font-weight: 600; color: var(--black); }
 .review-source { font-size: .9375rem; color: var(--gray); }
-.reviews-cta { margin-top: 3rem; text-align: center; }
+.reviews-intro { max-width: 680px; margin-top: 2.5rem; font-size: 1.125rem; line-height: 1.8; color: var(--gray); }
+.reviews-cta { margin-top: 2.5rem; }
 
 /* ── INSTAGRAM ── */
 .insta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; margin-top: 3rem; }
