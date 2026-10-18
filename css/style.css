@@ -108,9 +108,9 @@ nav {
 
 /* ── STRIP ── */
 .strip { background: var(--black); padding: 2.2rem 3rem; }
-.strip-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+.strip-inner { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
 .strip-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--white); font-weight: 500; }
-.strip-hours { display: flex; gap: 3rem; flex-wrap: wrap; }
+.strip-hours { display: flex; gap: 1.5rem 3rem; flex-wrap: wrap; justify-content: center; }
 .strip-slot { text-align: center; }
 .strip-slot-label { font-size: .9375rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--light); display: block; margin-bottom: .2rem; }
 .strip-slot-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--white); line-height: 1.3; }
@@ -213,14 +213,12 @@ section { padding: 8rem 2rem; }
 .form-success-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; margin-bottom: .8rem; }
 .form-success-text { font-size: 1.125rem; color: var(--gray); line-height: 1.7; }
 
-/* ── ALTERNATIVAS DE CONTACTO (WhatsApp / Email) ── */
+/* ── CONTACTO DIRECTO (teléfono) ── */
 .reserve-alt { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,.08); }
 .reserve-alt-label { font-size: .9375rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gray); display: block; text-align: center; margin-bottom: 1rem; }
-.reserve-alt-btns { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.reserve-alt-btns { display: grid; grid-template-columns: 1fr; gap: .8rem; }
 .reserve-alt-btn { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 52px; padding: .8rem 1rem; font-family: 'Montserrat', sans-serif; font-size: .9375rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(74,30,30,.4); color: var(--black); transition: all .3s; }
 .reserve-alt-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
-.reserve-whatsapp { border-color: rgba(26,122,60,.6); color: #1a7a3c; }
-.reserve-whatsapp:hover { background: #1a7a3c; border-color: #1a7a3c; color: #fff; }
 
 /* ── RESEÑAS ── */
 .reviews-bg { background: var(--white); }
@@ -248,6 +246,8 @@ section { padding: 8rem 2rem; }
 .contact-label { font-size: .9375rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin-bottom: .4rem; display: block; }
 .contact-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; line-height: 1.4; }
 .contact-value a { color: inherit; text-decoration: none; }
+/* Teléfono: grande y fácil de pulsar en móvil */
+a.phone-link { display: inline-flex; align-items: center; min-height: 48px; font-size: 1.75rem; font-weight: 600; color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .hours-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 1.0625rem; color: var(--gray); padding: .5rem 0; border-bottom: 1px solid rgba(0,0,0,.08); }
 .hours-row.on { color: var(--black); }
 .hours-row.off { color: var(--gray); }
@@ -332,11 +332,9 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   .insta-grid { grid-template-columns: repeat(2,1fr); }
   .form-row { grid-template-columns: 1fr; }
   .form-group.full, .form-divider, .form-privacy { grid-column: span 1; }
-  .reserve-alt-btns { grid-template-columns: 1fr; }
   section { padding: 4.5rem 1.2rem; }
   .strip { padding: 2.2rem 1.2rem; }
   .reserve-form { padding: 2rem 1.2rem; }
-  .strip-inner { flex-direction: column; }
   .strip-hours { gap: 1.5rem; justify-content: center; }
   .about-badge { top: 1rem; right: 1rem; left: 1rem; text-align: center; }
   footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.2rem; }

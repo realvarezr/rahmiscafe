@@ -56,18 +56,6 @@ const dateInput = document.getElementById('date');
 const today = new Date().toISOString().split('T')[0];
 dateInput.min = today;
 
-// ── Bloquear lunes (fix zona horaria: fecha local, no UTC) ──
-dateInput.addEventListener('input', function() {
-  const [y, m, d] = this.value.split('-').map(Number);
-  const selected = new Date(y, m - 1, d);
-  if (selected.getDay() === 1) {
-    this.value = '';
-    this.setCustomValidity('Montag ist unser Ruhetag. Bitte einen anderen Tag wählen.');
-  } else {
-    this.setCustomValidity('');
-  }
-});
-
 // ── Formulario de reserva ──
 document.getElementById('reserveForm').addEventListener('submit', function(e) {
   e.preventDefault();
