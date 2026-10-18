@@ -224,8 +224,16 @@ section { padding: 8rem 2rem; }
 /* ── INSTAGRAM ── */
 .insta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; margin-top: 3rem; }
 .insta-photo { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: var(--cream); }
-.insta-link { text-align: center; margin-top: 2rem; font-size: 1.0625rem; color: var(--gray); }
-.insta-link a { color: var(--black); text-decoration: none; font-weight: 600; }
+.insta-follow { display: flex; justify-content: center; margin-top: 2rem; }
+
+/* ── REDES SOCIALES (iconos SVG en línea, color = currentColor) ── */
+.social { display: flex; flex-wrap: wrap; gap: .8rem; }
+.social-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 48px; padding: 0 20px; border: 1px solid currentColor; color: var(--black); background: transparent; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 500; line-height: 1.2; text-decoration: none; transition: background .25s, color .25s; }
+.social-btn[hidden] { display: none; }
+.social-btn:hover, .social-btn:focus-visible { background: var(--black); color: var(--white); border-color: var(--black); }
+.social-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.social--dark .social-btn { color: var(--cream); }
+.social--dark .social-btn:hover, .social--dark .social-btn:focus-visible { background: var(--cream); color: var(--black); border-color: var(--cream); }
 
 /* ── CONTACTO ── */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; }
@@ -245,7 +253,8 @@ a.phone-link { display: inline-flex; align-items: center; min-height: 48px; font
 .route-card-note { margin-top: 1rem; font-size: .9375rem; color: var(--gray); }
 
 /* ── FOOTER ── */
-footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+/* padding derecho/inferior extra: deja sitio al botón flotante «nach oben» */
+footer { background: var(--black); padding: 3rem 7rem 3rem 3.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .footer-logo { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--white); }
 .footer-sub { font-size: .9375rem; letter-spacing: .06em; color: var(--light); margin-top: .3rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; }
@@ -345,6 +354,6 @@ footer { background: var(--black); padding: 3rem 3.5rem; display: flex; justify-
   .reserve-form { padding: 2rem 1.2rem; }
   .strip-hours { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem .8rem; width: 100%; }
   .about-badge { top: 1rem; right: 1rem; left: 1rem; text-align: center; }
-  footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.2rem; }
+  footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.2rem 6.5rem; }
   .legal-main { padding: 7rem 1.2rem 4rem; }
 }
