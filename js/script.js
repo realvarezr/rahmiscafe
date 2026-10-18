@@ -13,30 +13,57 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// ── Fecha mínima: hoy ──
+// ── Fecha mínima: hoy (fecha local, no UTC) ──
 const dateInput = document.getElementById('date');
-const today = new Date().toISOString().split('T')[0];
-dateInput.min = today;
+const now = new Date();
+dateInput.min = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
 
-// ── Formulario de reserva ──
-document.getElementById('reserveForm').addEventListener('submit', function(e) {
+// ── Formulario de reserva: envío real a reservierung.php ──
+const reserveForm = document.getElementById('reserveForm');
+const formError = document.getElementById('formError');
+reserveForm.addEventListener('submit', async function(e) {
   e.preventDefault();
+  formError.hidden = true;
   const required = this.querySelectorAll('[required]');
   let valid = true;
   required.forEach(field => {
-    if (!field.value.trim()) {
-      field.style.borderColor = '#c0392b';
-      valid = false;
-    } else {
-      field.style.borderColor = '';
-    }
+    const empty = !field.value.trim() || (field.type === 'email' && !field.checkValidity());
+    field.style.borderColor = empty ? '#A12622' : '';
+    field.setAttribute('aria-invalid', String(empty));
+    if (empty) valid = false;
   });
-  if (!valid) return;
+  if (!valid) {
+    this.querySelector('[aria-invalid="true"]').focus();
+    return;
+  }
 
+  const button = this.querySelector('.form-submit');
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Wird gesendet …';
+  let ok = false;
+  try {
+    const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+    const data = await res.json();
+    ok = res.ok && data.ok === true;
+  } catch (err) {
+    ok = false;
+  }
+  button.disabled = false;
+  button.textContent = label;
+
+  if (!ok) {
+    formError.hidden = false;
+    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
   const wrapper = document.getElementById('reserveFormWrapper');
   wrapper.querySelectorAll('.form-title, .form-subtitle').forEach(el => el.style.display = 'none');
   this.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  success.setAttribute('tabindex', '-1');
+  success.focus();
 });
 
 // ── Menú hamburguesa (móvil) ──

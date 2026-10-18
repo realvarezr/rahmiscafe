@@ -300,37 +300,37 @@
           <h3 class="form-title">Tisch anfragen</h3>
           <p class="form-subtitle">Wir melden uns innerhalb von 24 Stunden bei Ihnen</p>
 
-          <form id="reserveForm" novalidate>
+          <form id="reserveForm" action="reservierung.php" method="post" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="fname">Vorname *</label>
-                <input class="form-input" type="text" id="fname" placeholder="Max" required/>
+                <input class="form-input" type="text" id="fname" name="vorname" autocomplete="given-name" placeholder="Max" required/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="lname">Nachname *</label>
-                <input class="form-input" type="text" id="lname" placeholder="Mustermann" required/>
+                <input class="form-input" type="text" id="lname" name="nachname" autocomplete="family-name" placeholder="Mustermann" required/>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="email">E-Mail *</label>
-                <input class="form-input" type="email" id="email" placeholder="max@beispiel.de" required/>
+                <input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="max@beispiel.de" required/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="phone">Telefon</label>
-                <input class="form-input" type="tel" id="phone" placeholder="+49 ..."/>
+                <input class="form-input" type="tel" id="phone" name="telefon" autocomplete="tel" placeholder="+49 ..."/>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="date">Datum *</label>
-                <input class="form-input" type="date" id="date" required/>
+                <input class="form-input" type="date" id="date" name="datum" required/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="time">Uhrzeit *</label>
-                <select class="form-select" id="time" required>
+                <select class="form-select" id="time" name="uhrzeit" required>
                   <option value="" disabled selected>Bitte wählen</option>
                   <option>09:00</option>
                   <option>09:30</option>
@@ -360,16 +360,16 @@
             <div class="form-row">
               <div class="form-group full">
                 <label class="form-label" for="guests">Anzahl Personen *</label>
-                <select class="form-select" id="guests" required>
+                <select class="form-select" id="guests" name="personen" required>
                   <option value="" disabled selected>Bitte wählen</option>
-                  <option>1 Person</option>
-                  <option>2 Personen</option>
-                  <option>3 Personen</option>
-                  <option>4 Personen</option>
-                  <option>5 Personen</option>
-                  <option>6 Personen</option>
-                  <option>7 Personen</option>
-                  <option>8 Personen</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 Personen</option>
+                  <option value="3">3 Personen</option>
+                  <option value="4">4 Personen</option>
+                  <option value="5">5 Personen</option>
+                  <option value="6">6 Personen</option>
+                  <option value="7">7 Personen</option>
+                  <option value="8">8 Personen</option>
                 </select>
               </div>
             </div>
@@ -377,8 +377,13 @@
             <div class="form-row">
               <div class="form-group full">
                 <label class="form-label" for="notes">Anmerkungen</label>
-                <textarea class="form-textarea" id="notes" placeholder="Allergien, besondere Anlässe, Sitzwünsche …"></textarea>
+                <textarea class="form-textarea" id="notes" name="anmerkungen" placeholder="Allergien, besondere Anlässe, Sitzwünsche …"></textarea>
               </div>
+            </div>
+
+            <div class="form-hp" aria-hidden="true">
+              <label for="website">Website (bitte leer lassen)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"/>
             </div>
 
             <div class="form-row">
@@ -388,6 +393,10 @@
               </p>
             </div>
 
+            <div class="form-error" id="formError" role="alert" hidden>
+              Ihre Anfrage konnte leider nicht gesendet werden. Bitte rufen Sie uns an:
+              <a href="tel:+4978027057005">+49 7802 7057005</a>
+            </div>
             <button type="submit" class="form-submit">Anfrage absenden</button>
           </form>
 
@@ -400,13 +409,12 @@
 
           <!-- Alternativas directas -->
           <div class="reserve-alt">
-            <span class="reserve-alt-label">oder direkt kontaktieren</span>
-            <div class="reserve-alt-btns">
-              <a href="tel:+4978027057005" class="reserve-alt-btn">📞 +49 7802 7057005 anrufen</a>
-              <!-- E-Mail-Button: Adresse noch nicht bestätigt
-              <a href="mailto:[BITTE ERGÄNZEN]" class="reserve-alt-btn">✉️ Per E-Mail</a>
-              -->
-            </div>
+            <p class="reserve-phone">Lieber telefonisch?
+              <a href="tel:+4978027057005">+49 7802 7057005</a>
+            </p>
+            <!-- E-Mail-Button: Adresse noch nicht bestätigt
+            <a href="mailto:[BITTE ERGÄNZEN]" class="reserve-alt-btn">✉️ Per E-Mail</a>
+            -->
           </div>
         </div>
       </div>
