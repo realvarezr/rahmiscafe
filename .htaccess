@@ -10,6 +10,18 @@
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
+# ── URLs ohne .html ──
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # /index.html, /impressum.html, /datenschutz.html -> 301 auf die saubere URL
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+  RewriteRule ^index\.html$ / [L,R=301]
+  RewriteCond %{THE_REQUEST} \s/(impressum|datenschutz)\.html[\s?]
+  RewriteRule ^(impressum|datenschutz)\.html$ /$1 [L,R=301]
+  # /impressum und /datenschutz intern auf die .html-Datei abbilden
+  RewriteRule ^(impressum|datenschutz)/?$ $1.html [L]
+</IfModule>
+
 # ── Zeichensatz und Dateitypen ──
 AddDefaultCharset UTF-8
 <IfModule mod_mime.c>
@@ -34,7 +46,7 @@ AddDefaultCharset UTF-8
 
 # ── Browser-Cache ──
 # Bilder, Schriften, CSS und JS: 1 Jahr. HTML: 1 Stunde.
-# Hinweis: Nach Änderungen an CSS/JS den Dateinamen oder einen ?v=-Parameter ändern,
+# Hinweis: Nach Änderungen an CSS/JS den ?v=-Parameter (Datum des Tages) ändern,
 # sonst sehen wiederkehrende Besucher bis zu 1 Jahr die alte Version.
 <IfModule mod_expires.c>
   ExpiresActive On
