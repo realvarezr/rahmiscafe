@@ -131,6 +131,9 @@ section { padding: 8rem 2rem; }
 /* ── TERRASSE ── */
 .terrace-bg { background: var(--white); }
 .terrace-text { max-width: 680px; margin-top: 2.5rem; font-size: 1.125rem; line-height: 1.8; color: var(--gray); }
+.terrace-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem; margin-top: 2rem; padding: 0; }
+.terrace-facts li { display: flex; align-items: center; gap: .75rem; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 16px; color: var(--black); }
+.terrace-facts svg { flex: none; }
 .terrace-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
 .terrace-grid img { width: 100%; height: auto; display: block; }
 
@@ -350,6 +353,7 @@ footer { background: #E8D9C3; padding: 3rem 7rem 3rem 3.5rem; display: flex; jus
   .hero-overlay { --hero-radial-shape: ellipse 110% 85% at 50% 50%; }
   .about-grid, .menu-grid, .contact-grid, .reserve-grid, .terrace-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-visual { margin-bottom: 0; }
+  .terrace-facts { flex-direction: column; gap: 1rem; }
   .about-photo-small { position: static; width: 100%; border: 0; margin-top: 1.5rem; }
   section.reviews-band { padding: 64px 1.2rem; }
   .reviews-band-inner { flex-direction: column; text-align: center; }
