@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rahmi's Café &amp; Lounge · Bald wieder da</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#3B2A20">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500 600; font-display: swap; src: url('/assets/fonts/cormorant-garamond-latin.woff2') format('woff2'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url('/assets/fonts/cormorant-garamond-italic-latin.woff2') format('woff2'); }
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400 600; font-display: swap; src: url('/assets/fonts/montserrat-latin.woff2') format('woff2'); }
+
+    :root {
+      --cafe: #3B2A20;
+      --cafe-soft: #5A4334;
+      --muted: #6B5444;
+      --beige: #E8D9C3;
+      --cream: #FDF0E6;
+      --white: #FFFCF9;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      background: var(--cream);
+      color: var(--cafe);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    .logo { width: min(360px, 78vw); height: auto; margin-bottom: 2.5rem; }
+
+    /* Tasse mit Dampf */
+    .cup { width: 128px; height: 140px; margin-bottom: 2rem; overflow: visible; }
+    .cup .body, .cup .handle, .cup .saucer { fill: none; stroke: var(--cafe); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .cup .coffee { fill: var(--cafe-soft); }
+    .cup .steam { fill: none; stroke: var(--muted); stroke-width: 3; stroke-linecap: round; opacity: 0; animation: steam 3.6s ease-in-out infinite; }
+    .cup .steam:nth-of-type(2) { animation-delay: 1.2s; }
+    .cup .steam:nth-of-type(3) { animation-delay: 2.4s; }
+    @keyframes steam {
+      0%   { opacity: 0;   transform: translateY(10px); }
+      30%  { opacity: .75; }
+      100% { opacity: 0;   transform: translateY(-22px); }
+    }
+
+    .label {
+      display: inline-flex; align-items: center; gap: .75rem;
+      font-size: .875rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--cafe); margin-bottom: 1rem;
+    }
+    .label::before { content: ""; width: 30px; height: 1px; background: currentColor; }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+    }
+    h1 em { font-style: italic; display: block; }
+    .lead { max-width: 560px; color: var(--muted); margin-bottom: 2.5rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; margin-bottom: 3rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      min-height: 56px; padding: 0 1.6rem;
+      font-family: inherit; font-size: .9375rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; transition: background .25s, transform .25s;
+    }
+    .btn svg { width: 22px; height: 22px; flex: none; }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1fb457; }
+    .btn-call { background: var(--cafe); color: var(--white); }
+    .btn-call:hover { background: var(--cafe-soft); }
+    .btn:focus-visible, .social a:focus-visible, footer a:focus-visible { outline: 3px solid var(--cafe); outline-offset: 3px; }
+
+    .info {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem;
+      background: var(--beige); padding: 2rem 2.5rem; max-width: 620px; width: 100%;
+      text-align: left;
+    }
+    .info-label { display: block; font-size: .875rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+    .info-value { font-weight: 500; font-variant-numeric: lining-nums tabular-nums; }
+    .info-value a { color: inherit; }
+
+    .social { display: flex; gap: .8rem; justify-content: center; margin-top: 2rem; }
+    .social a {
+      display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1.2rem;
+      border: 1px solid var(--cafe); color: var(--cafe); text-decoration: none; font-weight: 500; font-size: 1rem;
+      transition: background .25s, color .25s;
+    }
+    .social a:hover { background: var(--cafe); color: var(--white); }
+    .social svg { width: 22px; height: 22px; }
+
+    footer { text-align: center; padding: 1.5rem 1rem 2rem; font-size: .9375rem; color: var(--muted); }
+    footer a { color: var(--muted); margin: 0 .6rem; }
+
+    .fade { opacity: 0; transform: translateY(12px); animation: fade .9s ease forwards; }
+    .fade:nth-child(2) { animation-delay: .12s; }
+    .fade:nth-child(3) { animation-delay: .24s; }
+    .fade:nth-child(4) { animation-delay: .36s; }
+    .fade:nth-child(5) { animation-delay: .48s; }
+    .fade:nth-child(6) { animation-delay: .6s; }
+    .fade:nth-child(7) { animation-delay: .72s; }
+    @keyframes fade { to { opacity: 1; transform: none; } }
+
+    @media (max-width: 560px) {
+      .info { grid-template-columns: 1fr; padding: 1.5rem; }
+      .actions { flex-direction: column; width: 100%; max-width: 360px; }
+      .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade { animation: none; opacity: 1; transform: none; }
+      .cup .steam { animation: none; opacity: .6; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo fade" src="/assets/logo/rahmis-logo.svg" alt="Rahmi's Café &amp; Lounge" width="360" height="178">
+
+    <svg class="cup fade" viewBox="0 0 128 140" aria-hidden="true">
+      <path class="steam" d="M44 52c-8-9 8-15 0-26"/>
+      <path class="steam" d="M64 52c-8-9 8-15 0-26"/>
+      <path class="steam" d="M84 52c-8-9 8-15 0-26"/>
+      <path class="coffee" d="M26 72h76c0 6-1 10-2 14H28c-1-4-2-8-2-14z"/>
+      <path class="body" d="M24 66h80v10c0 26-16 40-40 40S24 102 24 76z"/>
+      <path class="handle" d="M104 74h6a12 12 0 0 1 0 24h-9"/>
+      <path class="saucer" d="M10 124c10 6 98 6 108 0"/>
+    </svg>
+
+    <span class="label fade">Website in Arbeit</span>
+    <h1 class="fade">Unsere Website wird<em>frisch aufgebrüht</em></h1>
+    <p class="lead fade">Wir arbeiten gerade an unserem Internetauftritt. Das Café ist natürlich wie gewohnt für Sie geöffnet. Reservieren Sie ganz einfach per WhatsApp oder Telefon.</p>
+
+    <div class="actions fade">
+      <a class="btn btn-wa" href="https://wa.me/4915906787517?text=Hallo%20Rahmi%27s%20Caf%C3%A9%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Tisch%20reservieren." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+        Per WhatsApp
+      </a>
+      <a class="btn btn-call" href="tel:+4915906787517">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        01590 6787517
+      </a>
+    </div>
+
+    <div class="info fade">
+      <div>
+        <span class="info-label">Öffnungszeiten</span>
+        <span class="info-value">Täglich 09:00 – 20:00 Uhr</span>
+      </div>
+      <div>
+        <span class="info-label">Adresse</span>
+        <span class="info-value"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstra%C3%9Fe+55%2C+77704+Oberkirch" target="_blank" rel="noopener">Hauptstraße 55<br>77704 Oberkirch</a></span>
+      </div>
+    </div>
+
+    <div class="social fade">
+      <a href="https://www.instagram.com/rahmiscafe" target="_blank" rel="noopener" aria-label="Rahmi's Café auf Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61572491687756" target="_blank" rel="noopener" aria-label="Rahmi's Café auf Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/impressum">Impressum</a>
+    <a href="/datenschutz">Datenschutz</a>
+  </footer>
+</body>
+</html>
