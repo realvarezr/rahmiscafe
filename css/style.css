@@ -260,6 +260,7 @@ a.phone-link { display: inline-flex; align-items: center; min-height: 48px; font
 /* ── FOOTER ── */
 /* padding derecho/inferior extra: deja sitio al botón flotante «nach oben» */
 footer { background: #E8D9C3; padding: 3rem 7rem 3rem 3.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { display: inline-block; }
 .footer-logo { display: block; width: 180px; height: auto; }
 .footer-sub { font-size: .9375rem; letter-spacing: .06em; color: #6B5444; margin-top: .8rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; }

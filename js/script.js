@@ -123,3 +123,34 @@ window.addEventListener('scroll', () => {
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// ── URLs limpias: navegación interna sin "#" en la barra de direcciones ──
+const isHome = !!document.getElementById('reserveForm');
+const smoothBehavior = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+const scrollToTarget = (target) => {
+  const navEl = document.querySelector('nav');
+  const offset = navEl ? navEl.offsetHeight : 0;
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: smoothBehavior() });
+};
+if (isHome) {
+  // Logo (menú y footer): scroll arriba y URL limpia
+  document.querySelectorAll('a.nav-brand, a.footer-brand').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: smoothBehavior() });
+      history.replaceState(null, '', '/');
+    });
+  });
+  // Enlaces a secciones (menú, botones): scroll con offset del menú fijo, sin tocar la URL
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    a.addEventListener('click', (e) => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      scrollToTarget(target);
+    });
+  });
+}
