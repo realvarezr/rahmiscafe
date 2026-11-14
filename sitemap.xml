@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Domain [BITTE ERGÄNZEN] eintragen. Impressum und Datenschutz sind noindex, solange Platzhalter enthalten sind. -->
+<!-- Impressum und Datenschutz sind noindex und stehen deshalb nicht in der Sitemap. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://[BITTE ERGÄNZEN]/</loc>
+    <loc>https://rahmiscafe.de/</loc>
     <lastmod>2026-10-18</lastmod>
   </url>
 </urlset>

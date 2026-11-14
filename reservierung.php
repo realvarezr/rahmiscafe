@@ -10,7 +10,7 @@ declare(strict_types=1);
 // ── Konfiguration ──────────────────────────────────────────────
 // E-Mail-Adresse, an die Reservierungsanfragen gehen. Bei IONOS sollte es eine
 // Adresse der eigenen Domain sein, da sie auch als Absender (From) verwendet wird.
-$empfaenger = '[BITTE ERGÄNZEN]';
+$empfaenger = 'info@rahmiscafe.de';
 // ───────────────────────────────────────────────────────────────
 
 // Fehlermeldungen nie ausgeben: sie würden die JSON-Antwort zerstören
