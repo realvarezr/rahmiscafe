@@ -231,6 +231,8 @@ section { padding: 8rem 2rem; }
 
 /* ── REDES SOCIALES (iconos SVG en línea, color = currentColor) ── */
 .social { display: flex; flex-wrap: wrap; gap: .8rem; }
+.insta-follow .social { flex-wrap: nowrap; justify-content: center; }
+@media (max-width: 400px) { .insta-follow .social-btn { padding: 0 12px; gap: .4rem; } }
 .social-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 48px; padding: 0 20px; border: 1px solid currentColor; color: var(--black); background: transparent; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 500; line-height: 1.2; text-decoration: none; transition: background .25s, color .25s; }
 .social-btn[hidden] { display: none; }
 .social-btn:hover, .social-btn:focus-visible { background: var(--black); color: var(--white); border-color: var(--black); }
