@@ -368,3 +368,24 @@ footer { background: #E8D9C3; padding: 3rem 7rem 3rem 3.5rem; display: flex; jus
   footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.2rem 6.5rem; }
   .legal-main { padding: 7rem 1.2rem 4rem; }
 }
+
+/* ── RESERVAS RÁPIDAS (WhatsApp / teléfono) ── */
+.reserve-quick { margin-top: 3rem; padding: 2rem; background: var(--white); box-shadow: 0 10px 40px rgba(59,42,32,.10); text-align: center; }
+.reserve-quick-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 500; line-height: 1.2; margin-bottom: 1.5rem; }
+.reserve-quick-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-wa, .btn-call { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 56px; padding: 1rem 1.8rem; flex: 1 1 260px; max-width: 360px; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: .04em; text-decoration: none; }
+.btn-wa { background: #25D366; color: #fff; transition: filter .3s; }
+.btn-wa:hover { filter: brightness(.93); }
+.wa-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.reserve-quick-or { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; font-size: .9375rem; color: #6B5444; }
+.reserve-quick-or::before, .reserve-quick-or::after { content: ''; flex: 1; height: 1px; background: rgba(59,42,32,.18); }
+.reserve-grid { margin-top: 2.5rem; }
+.contact-note { margin-top: .4rem; font-size: 1.0625rem; line-height: 1.5; }
+.contact-note a { color: inherit; }
+.wa-float { display: none; }
+@media (max-width: 768px) {
+  .reserve-quick { padding: 1.5rem 1.2rem; }
+  .btn-wa, .btn-call { flex-basis: 100%; max-width: none; }
+  .wa-float { display: flex; position: fixed; right: 2rem; bottom: calc(2rem + 52px + .75rem); z-index: 90; width: 56px; height: 56px; align-items: center; justify-content: center; background: #25D366; color: #fff; border-radius: 50%; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .wa-float .wa-icon { width: 30px; height: 30px; }
+}
